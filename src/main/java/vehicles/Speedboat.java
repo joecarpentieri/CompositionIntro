@@ -7,11 +7,11 @@ public class Speedboat extends Vehicle implements IWaterVehicle, IMotorised {
     private String hullType;
     private IMotorised motor;
 
-    public Speedboat(float weight, int maxSpeed, IProduct baseProduct, IMotorised motor) {
+    public Speedboat(float weight, int maxSpeed, IProduct baseProduct, String hullType, IMotorised motor) {
         super(weight, maxSpeed, baseProduct);
+        this.hullType = hullType;
         this.motor = motor;
     }
-
 
     @Override
     public String getHullType() {
@@ -33,12 +33,12 @@ public class Speedboat extends Vehicle implements IWaterVehicle, IMotorised {
 
     @Override
     public void startEngine() {
-        System.out.println("engine started");
+        this.motor.startEngine();
     }
 
     @Override
     public void stopEngine() {
-        System.out.println("Engine stopped");
+        this.motor.stopEngine();
     }
 
     public int getHp() {
@@ -58,14 +58,5 @@ public class Speedboat extends Vehicle implements IWaterVehicle, IMotorised {
     @Override
     public void setFuel(int fuel) {
         this.motor.setFuel(fuel);
-    }
-
-    public IMotorised getEngine() {
-        return motor;
-    }
-
-    public void setEngine(IMotorised engine) {
-        this.motor = engine;
-
     }
 }

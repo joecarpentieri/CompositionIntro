@@ -17,7 +17,10 @@ public class Runner {
         car.setEngine(betterEngine);
         System.out.println(car.getHp());
 
-        Speedboat speedboat = new Speedboat(100, 1000, new Product(1000000, 1, "the titanic"), new Motor(10000, 100));
+        Speedboat speedboat = new Speedboat(100, 1000, new Product(1000000, 1, "the titanic"), "big", new Motor(10000, 100));
         System.out.println(speedboat.getMotor());
+
+        Kayak kayak = new Kayak(1000, 100000, new Product(100, 1, "Kayak"), "Big");
+
     }
 }
